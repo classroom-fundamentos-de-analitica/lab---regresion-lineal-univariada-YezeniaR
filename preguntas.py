@@ -15,7 +15,6 @@ def pregunta_01():
     print(y.shape)
     print(X.shape)
     y_reshaped = y.reshape(len(y), 1)
-
     X_reshaped = X.reshape(len(X), 1)
 
     print(y_reshaped.shape)
