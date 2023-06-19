@@ -10,13 +10,13 @@ import pandas as pd
 
 def pregunta_01():
     df = pd.read_csv('gm_2008_region.csv')
-    y = df['life'].values
-    X = df['fertility'].values
+    y = df['life'].to_numpy()
+    X = df['fertility'].to_numpy()
     print(y.shape)
     print(X.shape)
-    y_reshaped = y.reshape(-1, 1)
+    y_reshaped = y.reshape(len(y), 1)
 
-    X_reshaped = X.reshape(-1, 1)
+    X_reshaped = X.reshape(len(X), 1)
 
     print(y_reshaped.shape)
     print(X_reshaped.shape)
@@ -25,9 +25,9 @@ def pregunta_02():
     df = pd.read_csv('gm_2008_region.csv')
     print(df.shape)
     print(df['life'].corr(df['fertility']).round(4))
-    print(df['life'].mean().round(4))
+    print(round(df["life"].mean(),4))
     print(df['fertility'].dtype)
-    print(df['GDP'].corr(df['life']).round(4))
+    print(df['GDP'].corr(df['life']).round(decimals=4))
 
 
 def pregunta_03():
