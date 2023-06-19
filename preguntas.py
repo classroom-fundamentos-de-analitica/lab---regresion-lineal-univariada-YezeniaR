@@ -20,13 +20,16 @@ def pregunta_01():
     print(y_reshaped.shape)
     print(X_reshaped.shape)
 
+import pandas as pd
+
 def pregunta_02():
     df = pd.read_csv('gm_2008_region.csv')
     print(df.shape)
     print(df['life'].corr(df['fertility']).round(4))
-    print(round(df["life"].mean(),4))
+    print(df['life'].mean().round(4))
     print(df['fertility'].dtype)
-    print(df['GDP'].corr(df['life']).round(decimals=4))
+    print(df['GDP'].corr(df['life']).round(4))
+
 
 
 def pregunta_03():
